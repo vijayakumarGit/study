@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+
 import { AppComponent } from './app.component';
 import {TopbarComponent} from "./top-bar/topbar.component";
 import {SidebarComponent} from "./side-bar/sidebar.component";
@@ -14,6 +15,7 @@ import { PipeComponent } from './create/pipe.component';
 import { RoutingComponent } from './create/routing.component';
 import { HttpComponent } from './create/http.component';
 import {RouterModule, Routes} from "@angular/router";
+import {categroyList} from './pipe/custome.pipe'
 
 
 const AppRoute:Routes=[
@@ -39,7 +41,8 @@ const AppRoute:Routes=[
     DirectiveComponent,
     PipeComponent,
     RoutingComponent,
-    HttpComponent
+    HttpComponent,
+    categroyList
   ],
   imports: [
     BrowserModule,

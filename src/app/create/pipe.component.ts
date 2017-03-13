@@ -1,24 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-pipe',
-  template: `
-   <div id="page-wrapper" class="contentBody">
-
-  <div class="container-fluid">
-    pipe works
-  </div>
-
-
-</div>
-  `,
+  templateUrl: "pipe.component.html",
   styles: []
-})
-export class PipeComponent implements OnInit {
 
+})
+
+export class PipeComponent implements OnInit {
+    myValue:string;
+  myDate=new Date();
   constructor() { }
 
   ngOnInit() {
+    this.myValue='vijay';
   }
 
 }

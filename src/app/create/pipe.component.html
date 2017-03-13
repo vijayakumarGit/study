@@ -1,0 +1,39 @@
+<div id="page-wrapper" class="contentBody">
+
+
+  <div class="container-fluid">
+    <h1>Pipe</h1>
+
+  <div class="container">
+  <span class="str">
+
+        <!--myValue='lowercase'-->
+      <p>{{myValue|uppercasej</p>
+{ {myValue} }
+    </span>
+  </div>
+
+  <h3>Output</h3>
+  <div class="out">
+      {{myValue | uppercase}}
+    <br>
+    {{myDate}} <br>
+    {{myDate | date}}<br>
+    {{myDate | date:'MM/dd/yy'}}<br>
+     {{myValue | slice:1:3 }}<br>
+     {{myValue | slice:1:3 | uppercase }}
+  </div>
+    <hr>
+    <div class="txt">
+      <h3>create Pipe</h3>
+      <p class="pl10">ng g pipe pipe_name</p>
+      <p>Pipes and PipeTransform need import</p>
+      <p>implements using PipeTransform</p>
+      <br>
+      <input type="text" #input (keyup)="0" ><br>
+      {{input.value | myDouble}}
+    </div>
+
+
+</div>
+</div>
