@@ -16,6 +16,7 @@ export class MenuService{
       {id:'crpipe',url:'/pipe',name:'Pipe'},
       {id:'crrouting',url:'/routing',name:'Routing'},
       {id:'crhttp',url:'/httpServ',name:'Http'},
+      {id:'crForms',url:'/form',name:'Form'},
       {id:'sample',url:'/sample',name:'Sample'}]
   }
 

@@ -12,7 +12,8 @@ export class filterPipe{
       if(value.length ==0)
         return value;
       let customeArry=[];
-
+    if(!arg || arg=='')
+      return value
     if(arg2=='name'){
       for (let a of value)
         if(a[arg2].indexOf(arg) > -1 )

@@ -13,7 +13,7 @@ export class SidebarComponent implements OnInit{
       constructor(private sl:MenuService){};
       ngOnInit(){
         this.sideBarLst=this.sl.sidebarName();
-        console.log("safsdfddb"+this.sideBarLst)
+        console.log("safsdf"+this.sideBarLst)
       };
 
 }

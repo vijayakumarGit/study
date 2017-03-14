@@ -14,11 +14,13 @@ export class PipeComponent implements OnInit {
   myCompany=['Apple','Microsoft','Orange','Philipes','Boss'];
   myCars=[{name:'Audi'},{name:'Benze'},{name:'Fararri'},{name:'Shift'},{name:'Mehindra xuv'}];
   myFood=['Idly','Dosa','Vada','Poori','Meals','Briyani']
-  myFoodNonVeg=['Grill','Thandoori','Chicken briyani','Egg','Meals','Mutton Briyani']
+  myNonVegFood=['Grill','Thandoori','Chicken briyani','Egg','Meals','Mutton Briyani']
   constructor() {
-    console.log(this.myCompany);
+    // console.log(this.myNonVegFood);
   }
-
+  asyncvalue=new Promise((resolve,reject)=>{
+    setTimeout(()=>resolve('Data is here'),2000)
+  });
   ngOnInit() {
     this.myValue='vijay';
   }

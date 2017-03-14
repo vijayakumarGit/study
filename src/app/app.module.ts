@@ -19,6 +19,8 @@ import {categroyList} from './pipe/custome.pipe'
 import {filterPipe} from "./pipe/filter";
 import {PureFilterPipe} from "./pipe/purepire.pipe";
 import {ImpurePipe} from "./pipe/impurepipe.pipe";
+import {FormComponent} from "./create/forms.component";
+
 
 
 const AppRoute:Routes=[
@@ -29,7 +31,8 @@ const AppRoute:Routes=[
   {path:'pipe',component:PipeComponent},
   {path:'httpServ',component:HttpComponent},
   {path:'dashboard',component:DashboradComponent},
-  {path:'routing',component:RoutingComponent}
+  {path:'routing',component:RoutingComponent},
+  {path:'form',component:FormComponent}
 ];
 
 
@@ -48,7 +51,8 @@ const AppRoute:Routes=[
     categroyList,
     filterPipe,
     PureFilterPipe,
-    ImpurePipe
+    ImpurePipe,
+    FormComponent
 
   ],
   imports: [
