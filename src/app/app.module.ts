@@ -20,6 +20,7 @@ import {filterPipe} from "./pipe/filter";
 import {PureFilterPipe} from "./pipe/purepire.pipe";
 import {ImpurePipe} from "./pipe/impurepipe.pipe";
 import {FormComponent} from "./create/forms.component";
+import {TemplateDriven} from "./create/template-driven.component";
 
 
 
@@ -52,7 +53,9 @@ const AppRoute:Routes=[
     filterPipe,
     PureFilterPipe,
     ImpurePipe,
-    FormComponent
+    FormComponent,
+    TemplateDriven
+
 
   ],
   imports: [
