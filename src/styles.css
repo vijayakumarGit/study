@@ -6,7 +6,7 @@ ul li{
   cursor: pointer;
 }
 .contentBody{
-  position: fixed;
+  /*position: fixed;*/
   height: 100%;
 }
 .str{

@@ -16,6 +16,9 @@ import { RoutingComponent } from './create/routing.component';
 import { HttpComponent } from './create/http.component';
 import {RouterModule, Routes} from "@angular/router";
 import {categroyList} from './pipe/custome.pipe'
+import {filterPipe} from "./pipe/filter";
+import {PureFilterPipe} from "./pipe/purepire.pipe";
+import {ImpurePipe} from "./pipe/impurepipe.pipe";
 
 
 const AppRoute:Routes=[
@@ -42,7 +45,11 @@ const AppRoute:Routes=[
     PipeComponent,
     RoutingComponent,
     HttpComponent,
-    categroyList
+    categroyList,
+    filterPipe,
+    PureFilterPipe,
+    ImpurePipe
+
   ],
   imports: [
     BrowserModule,
