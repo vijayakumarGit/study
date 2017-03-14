@@ -27,3 +27,11 @@ ul li{
 .pl10{
   padding-left: 10px;
 }
+hr.vertical
+{
+  width: 0px;
+  height: 100%; /* or height in PX */
+}
+.linStike{
+  text-decoration: line-through;
+}

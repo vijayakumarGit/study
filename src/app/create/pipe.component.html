@@ -6,10 +6,9 @@
 
   <div class="container">
   <span class="str">
-
         <!--myValue='lowercase'-->
-      <p>{{myValue|uppercasej</p>
-{ {myValue} }
+<!--{ {myValue '|' 'uppercase'} }-->
+<!--{ {myValue} }-->
     </span>
   </div>
 
@@ -27,13 +26,11 @@
     <div class="txt">
       <h3>create Pipe</h3>
       <p class="pl10">ng g pipe pipe_name</p>
-      <p>Pipes and PipeTransform need import</p>
-      <p>implements using PipeTransform</p>
+      <p class="linStike">Pipes and PipeTransform need import</p>
+      <p class="linStike">implements using PipeTransform</p>
       <br>
       <input type="text" #input (keyup)="0" ><br>
       {{input.value | myDouble}}
     </div>
-
-
 </div>
 </div>
