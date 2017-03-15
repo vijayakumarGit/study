@@ -35,3 +35,11 @@ hr.vertical
 .linStike{
   text-decoration: line-through;
 }
+.col-center-block {
+  float: none;
+  margin: 0 auto;
+  /* margin-left: auto; margin-right: auto; */
+}
+.mt-xs-15{
+  margin-top: 15%;
+}

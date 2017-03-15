@@ -23,11 +23,12 @@ import {ImpurePipe} from "./pipe/impurepipe.pipe";
 import {FormComponent} from "./create/forms.component";
 import {TemplateDriven} from "./create/template-driven.component";
 import {DataDriven} from "./create/data-driven.component";
+import {LoginComponent} from "./loging/login";
 
 
 
 const AppRoute:Routes=[
-  {path:'',redirectTo:'dashboard',pathMatch:'full'},
+  {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'component',component:CreateComponent},
   {path:'service',component:ServiceComponent},
   {path:'directive',component:DirectiveComponent},
@@ -35,7 +36,8 @@ const AppRoute:Routes=[
   {path:'httpServ',component:HttpComponent},
   {path:'dashboard',component:DashboradComponent},
   {path:'routing',component:RoutingComponent},
-  {path:'form',component:FormComponent}
+  {path:'form',component:FormComponent},
+  {path:'login',component:LoginComponent}
 ];
 
 
@@ -57,9 +59,8 @@ const AppRoute:Routes=[
     ImpurePipe,
     FormComponent,
     TemplateDriven,
-    DataDriven
-
-
+    DataDriven,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
