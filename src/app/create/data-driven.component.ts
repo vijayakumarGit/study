@@ -89,6 +89,13 @@ export class DataDriven{
       'password':['',Validators.required],
       'gender':['Male']
     })
+
+    // this.myForm.valueChanges.subscribe(
+    //   (data:any)=>console.log(data)
+    // )
+    this.myForm.statusChanges.subscribe(
+      (data:any)=>console.log(data)
+    )
   }
 
   onAddHobby(){
