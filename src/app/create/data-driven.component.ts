@@ -45,14 +45,22 @@ import {Observable} from "rxjs/Rx";
   <button type="button" class="btn btn-warning" (click)="onAddHobby()">Add Hobbies</button>
   <button type="submit" class="btn btn-primary" style="float: right" [disabled]="!myForm.valid">Submit</button> 
   </div> 
-  <div class="bg-info text-info col-md-3" style="word-wrap: break-word"> 
+  <div class="bg-info text-info col-md-4" style="word-wrap: break-word"> 
   To use Data Driven need to import ReactiveFormModule in app.module 
   new FormControl(Displayvalue,Validators.required) 
   To use formcontrol inside formgroup import FormGroup and FromControl 
+  <ul>
+  <li>In Data Driven We need to import FromControl in forms then we can use in html formGroup property binding</li>
+  <li>formGroupName,formControlName</li>
+  <li>while creating new FormGroup inside value new FormControl</li>
+  <li>For Example new FormControl('name',Validators.required),</li>
+  <li>Using form builder import FromBuilder simple way of creating form</li>
+  </ul>
   <a href="https://angular.io/docs/ts/latest/api/forms/index/Validators-class.html">https://angular.io/docs/ts/latest/api/forms/index/Validators-class.html  </a> 
   </div> 
   </form>`,
   })
+
 
 
 export class DataDriven{
@@ -71,6 +79,7 @@ export class DataDriven{
     //     'gender':new FormControl('Male')
     // }
     // );
+
     this.myForm=FB.group({
       userData:FB.group({
         'username':['Chinnamma',[Validators.required,this.myCustomValidator]],
@@ -85,6 +94,7 @@ export class DataDriven{
   onAddHobby(){
     (<FormArray>this.myForm.controls['hobbies']).push(new FormControl('',Validators.required,this.myAsyncValidator))
   }
+
   myCustomValidator(control:FormControl){
 
     if(control.value==='Google') {
@@ -111,4 +121,8 @@ export class DataDriven{
     )
     return promise;
   }
+
+
+
+
 }
