@@ -3,14 +3,17 @@
  */
 import {Component} from "@angular/core";
 import {NgForm} from "@angular/forms";
-@Component({
+@ Component({
   selector:'template-driven',
   template:'<h2 class="text-success">Template driven</h2>' +
-  '<form (ngSubmit)="onSubmit(f)" #f="ngForm"><div class="col-lg-4">' +
+  '<form (ngSubmit)="onSubmit(f)" #f="ngForm"><div class="col-sm-4">' +
   '<div ngModelGroup="userDate">' +
   '<div class="form-group">' +
   '<label class="username">Username</label>' +
-  '<input type="text" class="form-control" name="username" [(ngModel)]="user.username" id="username" required>' +
+  '<input type="text" class="form-control" name="username" #usrname="ngModel" [(ngModel)]="user.username" id="username" required>' +
+  '<div *ngIf="usrname.invalid">' +
+  'Invalid user name' +
+  '</div>' +
   '</div>' +
   '<div class="form-group">' +
   '<label class="email">Email</label>' +
@@ -26,15 +29,13 @@ import {NgForm} from "@angular/forms";
   '<input type="radio" name="gender" [(ngModel)]="user.gender" [value]="g"></label>' +
   '{{g}}' +
   '</div>' +
-  '<button type="submit" class="btn btn-primary">Submit</button>' +
+  '<button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>' +
   '</div></form>',
 
 
 
 
-  styles:[`.ng-invalid{
-            border: 1px solid red;
-          }`]
+
 
 })
 
@@ -49,6 +50,6 @@ export class TemplateDriven{
   userGender=['Male','Female'];
   onSubmit(form:NgForm){
     console.log(this.user)
-    console.log(form.value)
+    console.log(form)
   }
 }
