@@ -19,7 +19,7 @@ import {Observable} from "rxjs/Rx";
   <input type="text" class="form-control" name="username" formControlName="username"   id="username"> 
   <div *ngIf="!myForm.controls['userData'].controls['username'].valid"> 
   invalid name</div> 
-  </div> 
+  </div>  
   <div class="form-group"> 
   <label class="email">Email</label> 
   <input type="text" class="form-control" name="email" formControlName="email"> 
@@ -93,9 +93,9 @@ export class DataDriven{
     // this.myForm.valueChanges.subscribe(
     //   (data:any)=>console.log(data)
     // )
-    this.myForm.statusChanges.subscribe(
-      (data:any)=>console.log(data)
-    )
+    // this.myForm.statusChanges.subscribe(
+    //   (data:any)=>console.log(data)
+    // )
   }
 
   onAddHobby(){

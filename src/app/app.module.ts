@@ -24,19 +24,28 @@ import {FormComponent} from "./create/forms.component";
 import {TemplateDriven} from "./create/template-driven.component";
 import {DataDriven} from "./create/data-driven.component";
 import {LoginComponent} from "./loging/login";
+import { TestFromComponent } from './create/test-from/test-from.component';
+import {AuthService} from "./create/httpService/withAuthService";
+import {nonAuthService} from "./create/httpService/withoutAuthService";
+import {apiService} from "./create/httpService/methodOfService";
+import {authPageCompoent} from "./bundle/authPage";
 
 
 
 const AppRoute:Routes=[
   {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'component',component:CreateComponent},
-  {path:'service',component:ServiceComponent},
-  {path:'directive',component:DirectiveComponent},
-  {path:'pipe',component:PipeComponent},
-  {path:'httpServ',component:HttpComponent},
-  {path:'dashboard',component:DashboradComponent},
-  {path:'routing',component:RoutingComponent},
-  {path:'form',component:FormComponent},
+  {path:'secure',component:authPageCompoent,children:[
+    {path:'',redirectTo:'pipe',pathMatch:'full'},
+    {path:'component',component:CreateComponent,outlet:'auth'},
+    {path:'service',component:ServiceComponent,outlet:'auth'},
+    {path:'directive',component:DirectiveComponent,outlet:'auth'},
+    {path:'pipe',component:PipeComponent,outlet:'auth'},
+    {path:'httpServ',component:HttpComponent,outlet:'auth'},
+    {path:'dashboard',component:DashboradComponent,outlet:'auth'},
+    {path:'routing',component:RoutingComponent,outlet:'auth'},
+    {path:'form',component:FormComponent,outlet:'auth'},
+  ]},
+
   {path:'login',component:LoginComponent}
 ];
 
@@ -44,6 +53,7 @@ const AppRoute:Routes=[
 @NgModule({
   declarations: [
     AppComponent,
+    authPageCompoent,
     TopbarComponent,
     SidebarComponent,
     DashboradComponent,
@@ -60,7 +70,8 @@ const AppRoute:Routes=[
     FormComponent,
     TemplateDriven,
     DataDriven,
-    LoginComponent
+    LoginComponent,
+    TestFromComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +80,7 @@ const AppRoute:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(AppRoute)
   ],
-  providers: [],
+  providers: [AuthService,nonAuthService,apiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

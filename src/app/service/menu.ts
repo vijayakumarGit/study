@@ -10,14 +10,14 @@ export class MenuService{
 
   public sidebarName() : any{
   return  [{id:'dashboard',url:'/dashboard',name:'DashBoard'},
-      {id:'crcomp',url:'/component',name:'Component'},
-      {id:'crservice',url:'/service',name:'Service'},
-      {id:'crdirect',url:'/directive',name:'Directive'},
-      {id:'crpipe',url:'/pipe',name:'Pipe'},
-      {id:'crrouting',url:'/routing',name:'Routing'},
-      {id:'crhttp',url:'/httpServ',name:'Http'},
-      {id:'crForms',url:'/form',name:'Form'},
-      {id:'sample',url:'/sample',name:'Sample'}]
+      {id:'crcomp',url:'component',name:'Component'},
+      {id:'crservice',url:'service',name:'Service'},
+      {id:'crdirect',url:'directive',name:'Directive'},
+      {id:'crpipe',url:'pipe',name:'Pipe'},
+      {id:'crrouting',url:'routing',name:'Routing'},
+      {id:'crhttp',url:'httpServ',name:'Http'},
+      {id:'crForms',url:'form',name:'Form'},
+      {id:'sample',url:'sample',name:'Sample'}]
   }
 
 }

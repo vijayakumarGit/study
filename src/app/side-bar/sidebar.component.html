@@ -1,6 +1,6 @@
 <div class="collapse navbar-collapse navbar-ex1-collapse">
   <ul class="nav navbar-nav side-nav">
-    <li *ngFor="let name of sideBarLst" [routerLink]="[name.url]">
+    <li *ngFor="let name of sideBarLst" [routerLink]="['/secure',{outlets:{'auth':[name.url]}}]">
      <a>{{name.name}}</a>
     </li>
   </ul>

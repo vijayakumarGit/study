@@ -43,3 +43,6 @@ hr.vertical
 .mt-xs-15{
   margin-top: 15%;
 }
+body{
+  overflow-x: hidden;
+}

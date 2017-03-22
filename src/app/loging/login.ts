@@ -5,6 +5,8 @@
 
 import {Component} from "@angular/core";
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
+import {apiService} from "../create/httpService/methodOfService";
+import {Router} from "@angular/router";
 @Component({
   selector:'app-login',
   template:`<form  (ngSubmit)="onSubmit()" [formGroup]="myForm1" >
@@ -29,11 +31,11 @@ import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 export class LoginComponent{
   myForm1:FormGroup;
 
-  constructor(private FB:FormBuilder)
+  constructor(private FB:FormBuilder,private login:apiService,private router:Router)
   {
     this.myForm1=FB.group(
       {
-        'username':['',Validators.compose([Validators.required])],
+        'username':['',[Validators.required]],
         'password':['',Validators.compose([Validators.required])],
         'mode':['WEB']
       }
@@ -41,6 +43,23 @@ export class LoginComponent{
   }
 
   onSubmit(){
-    console.log(this.myForm1.value)
+    // console.log(this.myForm1.value)
+    let value=this.myForm1.value;
+    let url='account/login';
+
+    this.login.postMethodUnAuth(url,value)
+      .subscribe(
+      res=>{
+        console.log(res)
+         if(res) {
+          localStorage.setItem('appData', res)
+          localStorage.setItem('auth', res.authToken)
+          this.router.navigate(['/secure', {outlets: {'auth': ['pipe']}}])
+        }
+      },
+      error=>{
+        console.log(error)
+      }
+    )
   }
 }
