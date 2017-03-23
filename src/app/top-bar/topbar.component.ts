@@ -1,7 +1,7 @@
 /**
  * Created by Vk on 13/3/2017.
  */
-import {Component,OnInit} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {apiService} from "../create/httpService/methodOfService";
 import {Router} from "@angular/router";
 
@@ -11,7 +11,7 @@ import {Router} from "@angular/router";
 })
 
 export class TopbarComponent implements OnInit{
- userName="Angular 2";
+  @Input() myName:string="Angular 2";
 constructor(private serv:apiService,private router:Router){
  // this.userName=localStorage.getItem('appData').user.name.display;
 

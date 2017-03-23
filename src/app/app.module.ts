@@ -29,6 +29,9 @@ import {AuthServicePage} from "./create/httpService/withAuthService";
 import {nonAuthService} from "./create/httpService/withoutAuthService";
 import {apiService} from "./create/httpService/methodOfService";
 import {authPageCompoent} from "./bundle/authPage";
+import {filllocalStrogeValue} from "./service/localStorageValue";
+import {FormatinService} from "./service/structService";
+
 
 
 const AppRoute:Routes=[
@@ -79,7 +82,7 @@ const AppRoute:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(AppRoute)
   ],
-  providers: [AuthServicePage,nonAuthService,apiService],
+  providers: [AuthServicePage,nonAuthService,apiService,filllocalStrogeValue,FormatinService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -56,7 +56,7 @@ export class LoginComponent{
       res=>{
         console.log(res)
          if(res) {
-          localStorage.setItem('appData', res)
+          localStorage.setItem('appData', JSON.stringify(res))
           localStorage.setItem('auth', res.authToken)
           this.router.navigate(['/secure', {outlets: {'auth': ['pipe']}}])
         }
