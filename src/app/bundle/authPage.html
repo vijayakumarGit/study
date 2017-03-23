@@ -2,5 +2,9 @@
 
 <div id="wrapper">
   <top-bar [myName]="resname"></top-bar>
-  <router-outlet name="auth"></router-outlet>
+  <div id="page-wrapper" class="contentBody">
+    <div class="container-fluid">
+      <router-outlet name="auth"></router-outlet>
+    </div>
+  </div>
 </div>

@@ -17,7 +17,8 @@ export class MenuService{
       {id:'crrouting',url:'routing',name:'Routing'},
       {id:'crhttp',url:'httpServ',name:'Http'},
       {id:'crForms',url:'form',name:'Form'},
-      {id:'sample',url:'sample',name:'Sample'}]
+      {id:'sample',url:'sample',name:'Sample'},
+      {id:'inputoutput',url:'inout',name:'Input and Output'}]
   }
 
 }

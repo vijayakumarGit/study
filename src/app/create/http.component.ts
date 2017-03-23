@@ -3,14 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-http',
   template: `
-    <div id="page-wrapper" class="contentBody">
-
-  <div class="container-fluid">
+    <div>
     http works
   </div>
-
-
-</div>
   `,
   styles: []
 })

@@ -24,7 +24,7 @@ import {Router} from "@angular/router";
 
 <div class="d-flex justify-content-center">
 <button type="submit" class="btn btn-default">Submit</button>
-<button  type="button" id="glogin" class="btn btn-primary">google login</button>
+<!--<button  type="button" id="glogin" class="btn btn-primary">google login</button>-->
 </div>
 </div>
 </div>

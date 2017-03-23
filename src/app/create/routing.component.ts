@@ -3,14 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-routing',
   template: `
-   <div id="page-wrapper" class="contentBody">
-
-  <div class="container-fluid">
+  <div>
     routing works
   </div>
 
-
-</div>
   `,
   styles: []
 })

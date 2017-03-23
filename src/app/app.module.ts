@@ -31,6 +31,9 @@ import {apiService} from "./create/httpService/methodOfService";
 import {authPageCompoent} from "./bundle/authPage";
 import {filllocalStrogeValue} from "./service/localStorageValue";
 import {FormatinService} from "./service/structService";
+import {InputOutputCOmponent} from "./create/InputOutput.component"
+import {InandOutChild} from "./create/Inputandoutput/InandOutChild.component";
+
 
 
 
@@ -46,6 +49,7 @@ const AppRoute:Routes=[
     {path:'dashboard',component:DashboradComponent,outlet:'auth'},
     {path:'routing',component:RoutingComponent,outlet:'auth'},
     {path:'form',component:FormComponent,outlet:'auth'},
+    {path:'inout',component:InputOutputCOmponent,outlet:'auth'}
   ]},
 
   {path:'login',component:LoginComponent}
@@ -73,7 +77,9 @@ const AppRoute:Routes=[
     TemplateDriven,
     DataDriven,
     LoginComponent,
-    TestFromComponent
+    TestFromComponent,
+    InputOutputCOmponent,
+    InandOutChild
   ],
   imports: [
     BrowserModule,

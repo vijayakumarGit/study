@@ -3,14 +3,9 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-directive',
   template: `
-   <div id="page-wrapper" class="contentBody">
-
-  <div class="container-fluid">
+  <div>
     directive works
   </div>
-
-
-</div>
   `,
   styles: []
 })
