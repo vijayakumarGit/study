@@ -46,3 +46,9 @@ hr.vertical
 body{
   overflow-x: hidden;
 }
+.d-flex{
+  display: flex;
+}
+.justify-content-center{
+  justify-content: center;
+}

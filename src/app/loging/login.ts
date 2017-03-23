@@ -19,9 +19,12 @@ import {Router} from "@angular/router";
   <div class="form-group">
   <label class="text-info">Password</label>
   <input type="password" class="form-control" formControlName="password"/>  
+  
 </div>
-<div class="col-sm-3 col-center-block">
+
+<div class="d-flex justify-content-center">
 <button type="submit" class="btn btn-default">Submit</button>
+<button  type="button" id="glogin" class="btn btn-primary">google login</button>
 </div>
 </div>
 </div>
@@ -29,11 +32,12 @@ import {Router} from "@angular/router";
 })
 
 export class LoginComponent{
-  myForm1:FormGroup;
 
+  myForm1:FormGroup;
   constructor(private FB:FormBuilder,private login:apiService,private router:Router)
   {
-    this.myForm1=FB.group(
+
+     this.myForm1=FB.group(
       {
         'username':['',[Validators.required]],
         'password':['',Validators.compose([Validators.required])],
@@ -61,5 +65,12 @@ export class LoginComponent{
         console.log(error)
       }
     )
+
   }
+
+
+
+
+
+
 }

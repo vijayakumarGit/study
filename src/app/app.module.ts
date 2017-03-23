@@ -25,11 +25,10 @@ import {TemplateDriven} from "./create/template-driven.component";
 import {DataDriven} from "./create/data-driven.component";
 import {LoginComponent} from "./loging/login";
 import { TestFromComponent } from './create/test-from/test-from.component';
-import {AuthService} from "./create/httpService/withAuthService";
+import {AuthServicePage} from "./create/httpService/withAuthService";
 import {nonAuthService} from "./create/httpService/withoutAuthService";
 import {apiService} from "./create/httpService/methodOfService";
 import {authPageCompoent} from "./bundle/authPage";
-
 
 
 const AppRoute:Routes=[
@@ -80,7 +79,7 @@ const AppRoute:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(AppRoute)
   ],
-  providers: [AuthService,nonAuthService,apiService],
+  providers: [AuthServicePage,nonAuthService,apiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

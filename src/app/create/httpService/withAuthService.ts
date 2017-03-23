@@ -6,7 +6,7 @@ import {Injectable} from "@angular/core";
  */
 @Injectable()
 
-export class AuthService{
+export class AuthServicePage{
     private url='http://apiv2.liad.com.au/';
     public AuthService(path):any{
       let header=new Headers();

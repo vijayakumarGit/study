@@ -14,6 +14,7 @@ export class TopbarComponent implements OnInit{
  userName="Angular 2";
 constructor(private serv:apiService,private router:Router){
  // this.userName=localStorage.getItem('appData').user.name.display;
+
 }
 ngOnInit(){
   // this.userName=localStorage.getItem('appData').user.name.display;
@@ -32,4 +33,6 @@ ngOnInit(){
         error=>{console.log(error)}
       )
   }
+
+
 }
