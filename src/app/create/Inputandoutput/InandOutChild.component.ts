@@ -13,24 +13,12 @@ import {Observable} from "rxjs";
   </p>
   <h3 class="text-success">Output</h3>
   <table>
-  <tr>
-  <th class="col-sm-10">Enter Value A</th>
-  <th class="col-sm-10"><input type="number" class="form-group"></th>
+  <tr *ngFor="let v of dynamicInput">
+  <th class="col-sm-10">{{v.name}}</th>
+  <th class="col-sm-10"><input type="number" class="form-group" [(ngModel)]="v.box"></th>
   </tr>
    <tr>
-  <th class="col-sm-10">Enter Value B</th>
-  <th class="col-sm-10"><input type="number" class="form-group"></th>
-  </tr>
-   <tr>
-  <th class="col-sm-10">Enter Value C</th>
-  <th class="col-sm-10"><input type="number" class="form-group"></th>
-  </tr>
-   <tr>
-  <th class="col-sm-10">Enter Value D</th>
-  <th class="col-sm-10"><input type="number" class="form-group"></th>
-  </tr>
-   <tr>
-   <th class="col-sm-10"><input type="button" class="form-group" value="Enter" (click)="totValue()"></th>
+   <th class="col-sm-10"><input type="button" class="btn btn-success" value="Enter" (click)="totValue()"></th>
   </tr>
     
 </table>
@@ -39,7 +27,7 @@ import {Observable} from "rxjs";
 })
 export class InandOutChild implements AfterViewInit,OnChanges{
    @Input() userEnter:any;
-  dynamicInput:any [];
+  dynamicInput:any []=[];
   @Input('userDataValue') userCurrentValue:Observable<number>;
   constructor(){
     this.dymicalLoad(5)

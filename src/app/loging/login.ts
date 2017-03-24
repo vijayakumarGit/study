@@ -3,10 +3,11 @@
  * Created by Vk on 15/3/2017.
  */
 
-import {Component} from "@angular/core";
+import {Component, AfterViewInit} from "@angular/core";
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import {apiService} from "../create/httpService/methodOfService";
 import {Router} from "@angular/router";
+declare const gapi: any;
 @Component({
   selector:'app-login',
   template:`<form  (ngSubmit)="onSubmit()" [formGroup]="myForm1" >
@@ -23,17 +24,19 @@ import {Router} from "@angular/router";
 </div>
 
 <div class="d-flex justify-content-center">
-<button type="submit" class="btn btn-default">Submit</button>
-<!--<button  type="button" id="glogin" class="btn btn-primary">google login</button>-->
+<button type="submit" class="p-2 btn btn-default">Submit</button>
+<!--<div id="googleBtn">Google</div>-->
+<button  type="button" id="glogin" class="p-2 btn btn-primary">google login</button>
 </div>
 </div>
 </div>
   </form>`
 })
 
-export class LoginComponent{
+export class LoginComponent implements AfterViewInit{
 
   myForm1:FormGroup;
+  gLogin:any;
   constructor(private FB:FormBuilder,private login:apiService,private router:Router)
   {
 
@@ -57,7 +60,6 @@ export class LoginComponent{
         console.log(res)
          if(res) {
           localStorage.setItem('appData', JSON.stringify(res))
-          localStorage.setItem('auth', res.authToken)
           this.router.navigate(['/secure', {outlets: {'auth': ['pipe']}}])
         }
       },
@@ -68,7 +70,28 @@ export class LoginComponent{
 
   }
 
-
+  public auth2:any
+  ngAfterViewInit() {
+    gapi.load('auth2',  () => {
+      this.auth2 = gapi.auth2.init({
+        client_id: '598297323901-lrti0ajlk0bui8onann1msjd1f5v5nni.apps.googleusercontent.com',
+        cookiepolicy: 'single_host_origin',
+        scope: 'profile email'
+      });
+      this.attachSignin(document.getElementById('glogin'));
+    });
+  }
+  public attachSignin(element) {
+     this.auth2.attachClickHandler(element, {},
+      (loggedInUser) => {
+        let crObj=loggedInUser;
+        crObj.type='Google'
+         localStorage.setItem('appData', JSON.stringify(crObj))
+        this.router.navigate(['/secure', {outlets: {'auth': ['pipe']}}])
+         }, function (error) {
+        // alert(JSON.stringify(error, undefined, 2));
+      });
+  }
 
 
 

@@ -79,7 +79,8 @@ const AppRoute:Routes=[
     LoginComponent,
     TestFromComponent,
     InputOutputCOmponent,
-    InandOutChild
+    InandOutChild,
+
   ],
   imports: [
     BrowserModule,
