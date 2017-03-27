@@ -15,6 +15,14 @@ import {CalCulateService} from "../../service/calCulation.service";
   <span class="text-success">Age:{{userEnter?.age}}</span>
   <span class="text-danger text-right">{{userCurrentValue}}</span>
   </p>
+  <pre>
+   <mark>@Input() userEnter:any;</mark> 
+   &lt;p class="list-group-item text-info"&gt;
+  &lt;span class="text-success"&gt;UserName:userEnter?.uname | uppercase&lt;/span&gt;&lt;br&gt;
+  &lt;span class="text-success"&gt;Age:userEnter?.age&lt;/span&gt;
+  &lt;span class="text-danger text-right"&gt;userCurrentValue&lt;/span&gt;
+  &lt;/p&gt;
+</pre>
   
   <h3 class="text-success">Output</h3>
   <p class="text-danger">
@@ -29,6 +37,36 @@ import {CalCulateService} from "../../service/calCulation.service";
    <th class="col-sm-10"><input type="button" class="btn btn-success" value="Enter" (click)="totValue()"></th>
   </tr>    
 </table>
+<pre>
+  &lt;table&gt;
+  &lt;tr *ngFor="let v of dynamicInput"&gt;
+  &lt;th class="col-sm-10"&gt;v.name&lt;/th&gt;
+  &lt;th class="col-sm-10"&gt;&lt;input type="number" class="form-group" [(ngModel)]="v.box"&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+   &lt;tr&gt;
+   &lt;th class="col-sm-10"&gt;&lt;input type="button" class="btn btn-success" value="Enter" (click)="totValue()"&gt;&lt;/th&gt;
+  &lt;/tr&gt;    
+&lt;/table&gt;
+
+<mark>Script part</mark>
+  @Output() clickedValue=new EventEmitter&lt;any&gt;()
+  constructor(private CC:CalCulateService)
+    this.dymicalLoad(5)
+  
+  dymicalLoad(userCurrentValue:number)
+    var i=0
+    let val=userCurrentValue;
+    while (i&lt;val)
+    let obj='name':'Enter Value'+i,'box':'';
+      this.dynamicInput.push(obj)
+      i++
+    
+    
+     totValue()
+    let totvalue=this.CC.addFun(this.dynamicInput);
+    this.clickedValue.emit(totvalue)
+
+</pre>
 `
 
 })
@@ -41,7 +79,6 @@ export class InandOutChild implements AfterViewInit,OnChanges{
     this.dymicalLoad(5)
   }
   dymicalLoad(userCurrentValue:number){
-    console.log(userCurrentValue)
     var i=0
     let val=userCurrentValue;
     while (i<val){
@@ -53,7 +90,6 @@ export class InandOutChild implements AfterViewInit,OnChanges{
   totValue(){
     let totvalue=this.CC.addFun(this.dynamicInput);
     this.clickedValue.emit(totvalue)
-    console.log("success",this.dynamicInput,totvalue)
   }
   ngOnChanges(){
     console.log("lkjhhjkl")
