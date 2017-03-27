@@ -10,7 +10,7 @@ import {InandOutChild} from "./Inputandoutput/InandOutChild.component";
 <h1 class="text-success">Input and Output</h1>
 <h3 class="text-info">Input</h3>
 <p class="text-danger">
-@input is a decorator used inside child compoent that allows data to flow from parent component to child component;
+@input is a decorator used inside child component that allows data to flow from parent component to child component;
 </p>
 <div class="bg-info">Parent Component</div>
 <table class="table table-bordered">
@@ -29,6 +29,7 @@ import {InandOutChild} from "./Inputandoutput/InandOutChild.component";
 <th class="col-sm-1"><button class="btn btn-primary" (click)="sendvalue(crValue)">Enter</button></th>
 </tr>
 </table>
+
 <hr>
 <div class="bg-info">Child component</div>
 <app-inout-child [userEnter]="printValue" [userDataValue]="sendCrNum" (clickedValue)="printingVals($event)"></app-inout-child>

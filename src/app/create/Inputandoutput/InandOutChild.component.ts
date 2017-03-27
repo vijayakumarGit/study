@@ -15,7 +15,11 @@ import {CalCulateService} from "../../service/calCulation.service";
   <span class="text-success">Age:{{userEnter?.age}}</span>
   <span class="text-danger text-right">{{userCurrentValue}}</span>
   </p>
+  
   <h3 class="text-success">Output</h3>
+  <p class="text-danger">
+    @output is a decorator used inside child component that allows event to flow from child component to parent component;
+    </p>
   <table>
   <tr *ngFor="let v of dynamicInput">
   <th class="col-sm-10">{{v.name}}</th>
