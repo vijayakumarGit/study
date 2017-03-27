@@ -7,6 +7,7 @@ import {Component, AfterViewInit} from "@angular/core";
 import {FormBuilder, Validators, FormGroup} from "@angular/forms";
 import {apiService} from "../create/httpService/methodOfService";
 import {Router} from "@angular/router";
+
 declare const gapi: any;
 @Component({
   selector:'app-login',
@@ -91,6 +92,10 @@ export class LoginComponent implements AfterViewInit{
          }, function (error) {
         // alert(JSON.stringify(error, undefined, 2));
       });
+  }
+  public logOut(){
+    localStorage.clear();
+    this.router.navigate([""])
   }
 
 

@@ -11,6 +11,9 @@ import {filllocalStrogeValue} from '../service/localStorageValue'
 })
 
 export class authPageCompoent{
-constructor(private LS:filllocalStrogeValue){}
-  resname:string=this.LS.resname
+constructor(private LS:filllocalStrogeValue){
+  // console.log(this.LS.imgUrl)
+}
+  resname:string=this.LS.resname;
+  imgUrl:string=this.LS.imgUrl;
 }

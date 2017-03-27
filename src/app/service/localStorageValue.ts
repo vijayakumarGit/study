@@ -9,6 +9,7 @@ import {Injectable} from '@angular/core'
 
 export class filllocalStrogeValue{
   public resname:string;
+  public imgUrl:string;
   constructor(private SS:FormatinService){
     let profile=JSON.parse(localStorage.getItem('appData'))
     // console.log(JSON.stringify(profile))
@@ -28,7 +29,8 @@ export class filllocalStrogeValue{
   public googleFillData(){
     let res=JSON.parse(localStorage.getItem('appData'))
     localStorage.setItem('auth',res.Zi.access_token);
-    this.resname=res.w3.ig
+    this.resname=res.w3.ig;
+    this.imgUrl=res.w3.Paa
   }
 
 

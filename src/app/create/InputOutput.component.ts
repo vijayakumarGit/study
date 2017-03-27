@@ -12,6 +12,7 @@ import {InandOutChild} from "./Inputandoutput/InandOutChild.component";
 <p class="text-danger">
 @input is a decorator used inside child compoent that allows data to flow from parent component to child component;
 </p>
+<div class="bg-info">Parent Component</div>
 <table class="table table-bordered">
 
 <tr class="warning"><th>Enter User Name</th>
@@ -28,8 +29,12 @@ import {InandOutChild} from "./Inputandoutput/InandOutChild.component";
 <th class="col-sm-1"><button class="btn btn-primary" (click)="sendvalue(crValue)">Enter</button></th>
 </tr>
 </table>
-<app-inout-child [userEnter]="printValue" [userDataValue]="sendCrNum"></app-inout-child>
-
+<hr>
+<div class="bg-info">Child component</div>
+<app-inout-child [userEnter]="printValue" [userDataValue]="sendCrNum" (clickedValue)="printingVals($event)"></app-inout-child>
+<hr>
+<div class="bg-info">Parent Component</div>
+<h3>Total Value=<span class="bg-success">{{totVal}}</span></h3>
 `
 })
 export class InputOutputCOmponent{
@@ -37,6 +42,7 @@ export class InputOutputCOmponent{
   printValue:any;
   crValue:number=1;
   sendCrNum:number;
+  totVal:number=0;
   constructor(){}
   assginValue(val:any){
     this.printValue=val
@@ -45,5 +51,8 @@ export class InputOutputCOmponent{
     console.log(val)
     this.sendCrNum=val
     }
+  printingVals(val:any){
+    this.totVal=val;
+  }
 
 }

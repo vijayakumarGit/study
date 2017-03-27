@@ -1,8 +1,12 @@
 /**
  * Created by Vk on 23/3/2017.
  */
-import {Component, Input, AfterViewInit, OnChanges} from "@angular/core";
+import {Component, Input, AfterViewInit, OnChanges, Output, EventEmitter} from "@angular/core";
+
 import {Observable} from "rxjs";
+import {CalCulateService} from "../../service/calCulation.service";
+
+
 @Component({
   selector:'app-inout-child',
   template:`<h3 class="text-success">Input</h3>
@@ -19,8 +23,7 @@ import {Observable} from "rxjs";
   </tr>
    <tr>
    <th class="col-sm-10"><input type="button" class="btn btn-success" value="Enter" (click)="totValue()"></th>
-  </tr>
-    
+  </tr>    
 </table>
 `
 
@@ -29,10 +32,12 @@ export class InandOutChild implements AfterViewInit,OnChanges{
    @Input() userEnter:any;
   dynamicInput:any []=[];
   @Input('userDataValue') userCurrentValue:Observable<number>;
-  constructor(){
+  @Output() clickedValue=new EventEmitter<any>()
+  constructor(private CC:CalCulateService){
     this.dymicalLoad(5)
   }
   dymicalLoad(userCurrentValue:number){
+    console.log(userCurrentValue)
     var i=0
     let val=userCurrentValue;
     while (i<val){
@@ -40,10 +45,11 @@ export class InandOutChild implements AfterViewInit,OnChanges{
       this.dynamicInput.push(obj)
       i++
     }
-    console.log(this.dynamicInput)
-  }
+   }
   totValue(){
-    console.log("success")
+    let totvalue=this.CC.addFun(this.dynamicInput);
+    this.clickedValue.emit(totvalue)
+    console.log("success",this.dynamicInput,totvalue)
   }
   ngOnChanges(){
     console.log("lkjhhjkl")

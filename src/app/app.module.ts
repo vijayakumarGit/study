@@ -33,6 +33,7 @@ import {filllocalStrogeValue} from "./service/localStorageValue";
 import {FormatinService} from "./service/structService";
 import {InputOutputCOmponent} from "./create/InputOutput.component"
 import {InandOutChild} from "./create/Inputandoutput/InandOutChild.component";
+import {CalCulateService} from "./service/calCulation.service";
 
 
 
@@ -89,7 +90,7 @@ const AppRoute:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(AppRoute)
   ],
-  providers: [AuthServicePage,nonAuthService,apiService,filllocalStrogeValue,FormatinService],
+  providers: [AuthServicePage,nonAuthService,apiService,filllocalStrogeValue,FormatinService,LoginComponent,CalCulateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
