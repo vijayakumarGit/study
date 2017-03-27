@@ -34,6 +34,8 @@ import {FormatinService} from "./service/structService";
 import {InputOutputCOmponent} from "./create/InputOutput.component"
 import {InandOutChild} from "./create/Inputandoutput/InandOutChild.component";
 import {CalCulateService} from "./service/calCulation.service";
+import {customeDirective} from "./directive/attrib.directive";
+import {strDirective} from "./directive/strcut.directive";
 
 
 
@@ -81,6 +83,8 @@ const AppRoute:Routes=[
     TestFromComponent,
     InputOutputCOmponent,
     InandOutChild,
+    customeDirective,
+    strDirective
 
   ],
   imports: [
