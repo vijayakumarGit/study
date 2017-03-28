@@ -1,0 +1,35 @@
+@fontColor:white;
+@bgColor:green;
+@fontSize:10px;
+
+.myClass{
+  .subClass(@fontColor,@bgColor,@fontSize)
+}
+nav{
+  ul{
+    font-size: @fontColor * 3;
+  }
+  li{
+    color: @bgColor;
+  }
+}
+  .subClass(@fc,@bg,@fs){
+    font-size:@fs * 2 ;
+    background-color: @bg;
+    color: @fc;
+  }
+
+h2{
+  &:extend(.style);
+  font-style: italic;
+
+}
+.style{
+  background-color: yellow;
+}
+a{
+  color: green;
+  &:hover{
+    background-color: blue;
+  }
+}

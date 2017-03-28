@@ -1,0 +1,17 @@
+
+$app-color:green;
+$navColor:red;
+$fontColor:white;
+
+.ownCss{
+  background-color: $app-color;
+}
+nav{
+  ul{
+   font-size: 18px;
+    color: $fontColor;
+  }
+  li{
+    background-color:$navColor ;
+  }
+}
